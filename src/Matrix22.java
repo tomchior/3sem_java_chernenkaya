@@ -73,6 +73,7 @@ public class Matrix22 {
         }
 
         public double getAngle() {
+
             return this.angle;
         }
     }
