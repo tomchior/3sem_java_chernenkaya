@@ -16,6 +16,7 @@ public class TaskFile {
             }
         }
 
+
         int max = array[0];
         for (int i : array)
             if (i > max)
