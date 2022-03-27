@@ -4,7 +4,7 @@ public class ExperimentsWithDrawing {
     public static void main(String[] args) {
         Drawing d1 = new Drawing(5, 5, '.');
         d1.print();
-        d1.SetPoint(3, 2, 'x');
+        d1.setPoint(3, 2, 'x');
         d1.print();
         d1.drawVerticalLine(2, 0, 2, '|');
         d1.print();

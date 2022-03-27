@@ -1,12 +1,12 @@
 package ru.spbu.arts.java.oop.ascigraphics;
 
 public class Drawing {
-    int i;
-    int j;
-    char c;
-    char[][] d;
+    private int i;
+    private int j;
+    private char c;
+    private char[][] d;
 
-    Drawing(int i, int j, char c) {
+    public Drawing(int i, int j, char c) {
         d = new char[i][j];
         for (int k = 0; k < i; k++)
             for (int l = 0; l < j; l++) d[k][l] = c;
@@ -16,37 +16,38 @@ public class Drawing {
         for (int i = 0; i < d.length; i++) {
             for (int j = 0; j < d[i].length; j++) {
                 System.out.print(d[i][j] + "\t");
-            } System.out.println();
+            }
+            System.out.println();
         }
     }
 
-    void SetPoint(int x, int y, char z){
+    public void setPoint(int x, int y, char z) {
         d[y][x] = z;
     }
 
-    void drawVerticalLine(int stLine, int endLine, int column, char symbol){
+    public void drawVerticalLine(int stLine, int endLine, int column, char symbol) {
         if (stLine > endLine) {
             int a = stLine;
             stLine = endLine;
             endLine = a;
         }
-        for (i = stLine; i <= endLine; i++){
+        for (i = stLine; i <= endLine; i++) {
             d[i][column] = symbol;
         }
     }
 
-    void drawHorizontalLine(int line, int stColumn, int endColumn, char symbol){
+    public void drawHorizontalLine(int line, int stColumn, int endColumn, char symbol) {
         if (stColumn > endColumn) {
             int a = stColumn;
             stColumn = endColumn;
             endColumn = a;
         }
-        for (j = stColumn; j <= endColumn; j++){
+        for (j = stColumn; j <= endColumn; j++) {
             d[line][j] = symbol;
         }
     }
 
-    void drawRectangle(int topX, int topY, int bottomX, int bottomY){
+    public void drawRectangle(int topX, int topY, int bottomX, int bottomY) {
         drawHorizontalLine(topY, bottomX, topX, '-');
         drawHorizontalLine(bottomY, bottomX, topX, '-');
         drawVerticalLine(topY, bottomY, topX, '|');
