@@ -2,7 +2,7 @@ package ru.spbu.arts.java.oop.time;
 
 public class ExperimentsWithTime {
     public static void main(String[] args) {
-        Time t1 = new Time(12, 45);
+        Time t1 = new Time(0, 15);
         t1.show();
         System.out.println(t1.isMorning());
         System.out.println(t1.isDay());

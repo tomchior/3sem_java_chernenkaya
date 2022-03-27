@@ -1,77 +1,78 @@
 package ru.spbu.arts.java.oop.time;
 
 public class Time {
+    private int h;
+    private int m;
 
-    int h;
-    int m;
-    Time(int h, int m) {
+    public Time(int h, int m) {
         this.h = h;
         this.m = m;
     }
 
-    void show(){
+    public void show() {
         System.out.println(this.h + ":" + this.m);
     }
 
-    boolean isMorning(){
+    public boolean isMorning() {
         boolean result;
-        if(this.h >= 4 && this.h <= 11){
-            result = true;
-        }else{
+        if (this.h >= 3 && this.h <= 11) {
+            return true;
+        } else {
             result = false;
         }
         return result;
     }
 
-    boolean isDay(){
+    public boolean isDay() {
         boolean result;
-        if(this.h >= 12 && this.h <= 17){
-            result = true;
-        }else{
+        if (this.h >= 12 && this.h <= 17) {
+            return true;
+        } else {
             result = false;
         }
         return result;
     }
 
-    boolean isEvening(){
+    public boolean isEvening() {
         boolean result;
-        if(this.h >= 18 && this.h <= 22){
-            result = true;
-        }else{
-            result = false;
-        }
-        return result;
-    }
-    boolean isNight(){
-        boolean result;
-        if(this.h >= 23 && this.h <= 4){
-            result = true;
-        }else{
+        if (this.h >= 18 && this.h <= 23) {
+            return true;
+        } else {
             result = false;
         }
         return result;
     }
 
-    String sayHello(){
+    public boolean isNight() {
+        boolean result;
+        if (this.h >= 0 && this.h <= 2) {
+            return true;
+        } else {
+            result = false;
+        }
+        return result;
+    }
+
+    public String sayHello() {
         String s = "";
-        if(isDay()){
+        if (isDay()) {
             s = "Добрый день";
-        }else if(isMorning()){
+        } else if (isMorning()) {
             s = "Доброе утро";
-        }else if(isEvening()){
+        } else if (isEvening()) {
             s = "Добрый вечер";
-        }else if(isNight()){
+        } else if (isNight()) {
             s = "Добрая ночь";
         }
         return s;
     }
 
-    void add(int a){
+    public void add(int a) {
         int sum1 = this.m + a;
-        if(sum1 >= 60){
+        if (sum1 >= 60) {
             this.m = sum1 - 60;
             this.h++;
-        }else{
+        } else {
             this.m = sum1;
         }
 
